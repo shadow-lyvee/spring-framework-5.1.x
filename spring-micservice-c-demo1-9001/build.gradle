@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.1.12.BUILD-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(":spring-context"))
+    compile(project(":spring-web"))
+    compile(project(":spring-webmvc"))
+    optional("javax.servlet:javax.servlet-api:3.1.0")
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.50'
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.67'
+    compile  group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    //compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.7'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+}
